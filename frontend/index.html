@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="./styles/normalize.css" />
+  <link rel="stylesheet" href="./styles/index.css" />
+  <link rel="stylesheet" href="./styles/header-footer.css" />
+  <link rel="stylesheet" href="./styles/form.css" />
+  <link rel="stylesheet" href="./styles/table.css" />
+  <link rel="stylesheet" href="./styles/buttons.css" />
+  <link rel="stylesheet" href="./styles/spinner.css">
+  <link rel="icon" type="image/x-icon" href="assets/images/logo.svg" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+  <script src="./js/index.js" type="module" defer></script>
+
+  <title>Simulador Primer Parcial</title>
+</head>
+
+<body>
+  <header class="flex">
+    <div class="nav flex">
+      <div>
+        <img src="./assets/images/logo.svg" alt="Logo Principal" />
+        <b>Matias Mansilla</b>
+      </div>
+      <!-- <nav>
+        <ul class="flex">
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Anuncio</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav> -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Anuncios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- <h1>Administrador de Monedas</h1> -->
+    <h1>Administrador de Monedas <span class="badge text-bg-info">Segundo Parcial</span></h1>
+  </header>
+
+  <section class="center">
+    <fieldset class="fieldset-container">
+      <!-- <legend>Información de la Moneda</legend> -->
+      <form form action="" method="post" id="form-group" class="form-group">
+        <div>
+          <!-- <input id="id" type="text" name="id" hidden>
+          <input id="fecha" type="date" name="fecha" hidden> -->
+          <input id="id" type="text" name="id" style="display: none;">
+          <input id="fecha" type="date" name="fecha" style="display: none;">
+          <h2 class="center">Información de la Moneda</h2>
+          <div class="form-fields-container">
+            <label for="nombre">Nombre</label>
+            <input class="inputs-styler" id="nombre" type="text" name="nombre" placeholder="Ingrese nombre..." required>
+          </div>
+          <div class="form-fields-container">
+            <label for="simbolo">Simbolo</label>
+            <input class="inputs-styler" id="simbolo" type="text" name="simbolo" placeholder="Ingrese simbolo..."
+              required>
+          </div>
+          <div class="form-fields-container">
+            <label for="precio">Precio Actual (USD)</label>
+            <input class="inputs-styler" id="precio" type="number" name="precio" placeholder="Ingrese precio..."
+              required>
+          </div>
+          <div class="form-fields-container">
+            <label for="dropdownCurrency">Tipo de Consenso</label>
+            <select class="inputs-styler" id="dropdownCurrency" name="dropdownCurrency" required>
+                <!-- el primer <option> tiene un valor vacío y está deshabilitado (disabled).
+                También tiene los atributos selected y hidden para asegurarse de que
+                aparezca como el primer elemento en la lista y no se pueda seleccionar -->
+              <option value="" disabled selected hidden>Seleccione</option>
+              <option value="Prueba de trabajo">Prueba de trabajo</option>
+              <option value="Prueba de participación">Prueba de participación</option>
+              <option value="Acuerdo de consenso">Acuerdo de consenso</option>
+            </select>
+          </div>
+          <div class="form-fields-container">
+            <label for="cantidad">Cantidad en circulación</label>
+            <input class="inputs-styler" id="cantidad" type="number" name="cantidad" placeholder="Ingrese cantidad..."
+              required>
+          </div>
+          <div class="form-fields-container">
+            <label for="dropdownType">Algoritmo</label>
+            <!-- <select class="inputs-styler" id="dropdownType" name="dropdownType" required>
+              <option value="" disabled selected hidden>Seleccione</option>
+              <option value="SHA-256">SHA-256</option>
+              <option value="Ethash">Ethash</option>
+              <option value="Scrypt">Scrypt</option>
+              <option value="Ouroboros">Ouroboros</option>
+              <option value="Ripple Protocol">Ripple Protocol</option>
+            </select> -->
+            <select class="form-select" aria-label="Default select example" id="dropdownType">
+              <option value="" disabled selected hidden>Seleccione</option>
+              <option value="SHA-256">SHA-256</option>
+              <option value="Ethash">Ethash</option>
+              <option value="Scrypt">Scrypt</option>
+              <option value="Ouroboros">Ouroboros</option>
+              <option value="Ripple Protocol">Ripple Protocol</option>
+            </select>
+          </div>
+          <div class="form-fields-container">
+            <label for="sitioweb">Sitio Web Oficial</label>
+            <input class="inputs-styler" id="sitioweb" type="text" name="sitioweb" placeholder="Ingrese sitio..."
+              required>
+          </div>
+          <div class="buttons-container">
+            <div class="btn btnFrm">
+              <input id="btnGuardar" type="submit" value="Guardar" class="btn btn-success">
+              <input id="btnEliminar" type="button" value="Eliminar" class="oculto">
+              <input id="btnCancelar" type="button" value="Cancelar" class="oculto">
+              <input id="btnEditar" type="button" value="Editar" class="oculto">
+            </div>
+          </div>
+        </div>
+      </form>
+    </fieldset>
+  </section>
+
+  <div id="spinner" class="spinner">
+    <img src="./assets/images/logo.svg" alt="Spinner" class="spinner-img">
+  </div>
+
+  <!-- <div id="spinner-container" class="spinner-container center"></div> -->
+
+  <section class="center">
+    <div >
+      <form form action="" method="post" id="form-average" class="flex form-average">
+        <div class="form-fields-container">
+          <label for="dropdownAverage">FILTRAR ALGORITMO</label>
+          <select class="inputs-styler" id="dropdownAverage" name="dropdownAverage" required>
+            <option value=0 disabled selected hidden>Seleccione</option>
+            <option value="SHA-256">SHA-256</option>
+            <option value="Ethash">Ethash</option>
+            <option value="Scrypt">Scrypt</option>
+            <option value="Ouroboros">Ouroboros</option>
+            <option value="Ripple Protocol">Ripple Protocol</option>
+          </select>
+        </div>
+        <div class="form-fields-container">
+          <label for="average">Promedio</label>
+          <input class="inputs-styler" id="average" type="text" name="average" placeholder="N/A" disabled>
+        </div>
+      </form>  
+  
+      <div id="checkbox-container" class="flex">
+        <div class="center flex-column container-table">
+          <table id="table-checkbox">
+            <thead>
+            </thead>
+            <tbody class="tbody-checkbox">
+              <tr>
+                <th class="">ID</th>
+                <th>
+                  <!-- <label for="chbox-nombre">Nombre</label>
+                  <input id="chbox-nombre" type="checkbox" checked> -->
+                  <input class="form-check-input" type="checkbox" value="" id="chbox-nombre" checked>
+                  <label class="form-check-label" for="chbox-nombre">
+                    Nombre
+                  </label>
+                </th>
+                <th>
+                  <!-- <label for="chbox-simbolo">Simbolo</label>
+                  <input id="chbox-simbolo" type="checkbox" checked> -->
+                  <input class="form-check-input" type="checkbox" value="" id="chbox-simbolo" checked>
+                  <label class="form-check-label" for="chbox-simbolo">
+                    Simbolo
+                  </label>
+                </th>
+                <th>
+                  <!-- <label for="chbox-fecha">Fecha Creación</label>
+                  <input id="chbox-fecha" type="checkbox" checked> -->
+                  <input class="form-check-input" type="checkbox" value="" id="chbox-fecha" checked>
+                  <label class="form-check-label" for="chbox-fecha">
+                    Fecha Creación
+                  </label>
+                </th>
+                <th>
+                  <!-- <label for="chbox-precio">Precio Actual</label>
+                  <input id="chbox-precio" type="checkbox" checked> -->
+                  <input class="form-check-input" type="checkbox" value="" id="chbox-precio" checked>
+                  <label class="form-check-label" for="chbox-precio">
+                    Precio Actual
+                  </label>
+                </th>
+                <th>
+                  <!-- <label for="chbox-consenso">Consenso</label>
+                  <input id="chbox-consenso" type="checkbox" checked> -->
+                  <input class="form-check-input" type="checkbox" value="" id="chbox-consenso" checked>
+                  <label class="form-check-label" for="chbox-consenso">
+                    Consenso
+                  </label>
+                </th>
+                <th>
+                  <!-- <label for="chbox-cantidad">Cantidad Circulación</label>
+                  <input id="chbox-cantidad" type="checkbox" checked> -->
+                  <input class="form-check-input" type="checkbox" value="" id="chbox-cantidad" checked>
+                  <label class="form-check-label" for="chbox-cantidad">
+                    Cantidad Circulación
+                  </label>
+                </th>
+                <th>
+                  <!-- <label for="chbox-algoritmo">Algoritmo</label>
+                  <input id="chbox-algoritmo" type="checkbox" checked> -->
+                  <input class="form-check-input" type="checkbox" value="" id="chbox-algoritmo" checked>
+                  <label class="form-check-label" for="chbox-algoritmo">
+                    Algoritmo
+                  </label>
+                </th>
+                <th>
+                  <!-- <label for="chbox-sitioweb">Sitio Web</label>
+                  <input id="chbox-sitioweb" type="checkbox" checked> -->
+                  <input class="form-check-input" type="checkbox" value="" id="chbox-sitioweb" checked>
+                  <label class="form-check-label" for="chbox-sitioweb">
+                    Sitio Web
+                  </label>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="center">
+    <div class="center flex-column container-table">
+      <div class="btn btnLimpiar">
+        <input id="btnLimpiar" type="button" value="Borrar Todo">
+      </div>
+      <table id="table-items">
+        <thead>
+          <tr>
+            <th class="">ID</th>
+            <th>Nombre</th>
+            <th>Simbolo</th>
+            <th>Fecha Creación</th>
+            <th>Precio Actual</th>
+            <th>Consenso</th>
+            <th>Cantidad Circulación</th>
+            <th>Algoritmo</th>
+            <th>Sitio Web</th>
+          </tr>
+        </thead>
+        <tbody class="tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="flex">
+    <!-- <nav>
+      <ul class="flex">
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Anuncio</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav> -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Anuncios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <p>Todos los derechos reservados <date>2021</date> &copy;</p>
+  </footer>
+</body>
+
+</html>

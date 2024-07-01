@@ -1,0 +1,33 @@
+@font-face {
+    font-family: poppins;
+    src: url(../assets/fonts/Poppins-Black.ttf);
+}
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body {
+    background-color: rgba(240, 168, 224, 0.3);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+}
+
+.oculto {
+    display: none;
+}
+
+
+section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+
